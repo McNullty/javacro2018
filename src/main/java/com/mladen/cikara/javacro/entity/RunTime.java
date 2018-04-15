@@ -1,6 +1,7 @@
 package com.mladen.cikara.javacro.entity;
 
 import java.time.Duration;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,6 +27,9 @@ public class RunTime {
   @ManyToOne
   @JoinColumn(name = "user_id", updatable = false)
   private User user;
+
+  @Column(updatable = false)
+  private LocalDateTime dateTime;
 
   private Duration runTime;
 
